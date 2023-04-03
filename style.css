@@ -1,0 +1,42 @@
+body {
+    background-color: #262626;
+    color: #e8e8e8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 20px;
+}
+
+#squares {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-gap: 1px;
+    width: 357px;
+    border: 1px solid white;
+}
+
+#timer {
+    font-size: 14px;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    font-size: 20px;
+    color: black;
+}
+
+#next-button {
+    height: 20px;
+}
+
+.disabled {
+    background-color: #262626;
+    border: none;
+    color: transparent;
+}
+
+.marked {
+    background-color: #ccc;
+    border: black solid 1px;
+    color: rgb(200, 47, 47);
+}
