@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Исследование</title>
+    <title>Unity WebGL Player | Исследование</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
-
   <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=1280 height=720></canvas>
@@ -22,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title"></div>
+        <div id="unity-build-title">Исследование</div>
       </div>
     </div>
     <script>
@@ -49,7 +47,7 @@
         if (type == 'error') div.style = 'background: red; padding: 10px;';
         else {
           if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function () {
+          setTimeout(function() {
             warningBanner.removeChild(div);
             updateBannerVisibility();
           }, 5000);
@@ -58,11 +56,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/psych5.loader.js";
+      var loaderUrl = buildUrl + "/psych6.loader.js";
       var config = {
-        dataUrl: buildUrl + "/psych5.data",
-        frameworkUrl: buildUrl + "/psych5.framework.js",
-        codeUrl: buildUrl + "/psych5.wasm",
+        dataUrl: buildUrl + "/psych6.data",
+        frameworkUrl: buildUrl + "/psych6.framework.js",
+        codeUrl: buildUrl + "/psych6.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Исследование",
@@ -118,5 +116,4 @@
       document.body.appendChild(script);
     </script>
   </body>
-
 </html>
