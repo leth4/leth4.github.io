@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Instant Pipes</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter"><link rel="icon" href="/media/favicon.png"></head><body><header><nav><a href="projects.html" class="homelink">←</a><a href="/site/games.html">Games</a><a href="/site/projects.html">Projects</a><a href="/site/about.html">About</a></nav></header><main>
+
+<h1>Instant Pipes</h1>
+<p>An editor tool for procedurally generating pipes by just dragging the cursor from start to end — the pipe will find the path in a customizable way.</p>
+<p><a href="https://github.com/letharqic/InstantPipes">github</a></p>
+<p><img src="https://github.com/letharqic/InstantPipes/assets/44412176/912f3879-1d82-4408-8cef-2698b82608a0" /></p>
+<h2>Compatibility</h2>
+<p>Unity 2021.3 or higher.</p>
+<h2>Installation</h2>
+<p>Add the package to your project via the <a href="https://docs.unity3d.com/Manual/upm-ui.html">Package Manager</a> using the Git URL
+    <span>https://github.com/letharqic/InstantPipes.git</span>. You can also clone the repository and point the Package Manager to your local copy.
+</p>
+<h2>Usage</h2>
+<h3>Starting out</h3>
+<ol>
+    <li>Create an empty GameObject and set its world position to zero.</li>
+    <li>Add a <span>Pipe Generator</span> component.</li>
+    <li>Select a material for the <span>Material</span> property.</li>
+</ol>
+<p>Ctrl+Z works with all actions. When you're commited to the pipes, you can just remove the component, the mesh will stay.</p>
+<h3>Pipes Settings</h3>
+<ul>
+    <li>
+        <span>Curvature</span> changes the length of the curved parts, making pipes appear more or less curvy. Note that it applies after pathfinding, so in some cases high
+        curvature value can make pipes intersect.
+    </li>
+    <li>
+        <span>Edges</span> property selects how many edges the pipes will have, and <span>Segments</span> is the amount of subdivisions in curved parts.
+    </li>
+    <li>You can toggle <span>Rings</span> and <span>End Caps</span> and separately set up their radius and thickness.</li>
+</ul>
+<h3>Using pathfinding</h3>
+<p>In the component inspector, select the <span>Create</span> tab. Now in the scene view start dragging your cursor where you want the pipe to start, end let go where you want it
+    to end; a pipe will appear.</p>
+<p>The tool uses A* pathfinding without a predefined grid — by raycasting from a point to the next points. Pipes can only detect colliders as obstacles.</p>
+<table>
+    <thead>
+        <tr>
+            <th align="left">Property</th>
+            <th align="left">Explanation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="left">Amount</td>
+            <td align="left">How many pipes will be created at once; each one will have an individual path.</td>
+        </tr>
+        <tr>
+            <td align="left">Max Iterations</td>
+            <td align="left">How many points will the algorithm check before giving up.</td>
+        </tr>
+        <tr>
+            <td align="left">Grid Y Angle</td>
+            <td align="left">Rotates the Y axis of the pathfinding grid that every pipes have to follow.</td>
+        </tr>
+        <tr>
+            <td align="left">Grid Size</td>
+            <td align="left">The distance between searched points; making it too small can produce bad results.</td>
+        </tr>
+        <tr>
+            <td align="left">Height</td>
+            <td align="left">How high the first and the last segment of a pipe will be. This value can't be smaller than grid size.</td>
+        </tr>
+        <tr>
+            <td align="left">Chaos</td>
+            <td align="left">Adds randomness to the pathfinding, making paths twisted and chaotic.</td>
+        </tr>
+        <tr>
+            <td align="left">Straight Priority</td>
+            <td align="left">Makes the algorithm prefer straight paths over turns.</td>
+        </tr>
+        <tr>
+            <td align="left">Near Obstacle Priority</td>
+            <td align="left">Makes the pipes stay close to obstacles.</td>
+        </tr>
+    </tbody>
+</table>
+<p><img src="https://github.com/letharqic/InstantPipes/assets/44412176/a076dcf6-21d2-46b1-80c9-70cdbd59b00e" alt="image" /></p>
+<h3>Manual Editing</h3>
+<p>In the component inspector, select the <span>Edit</span> tab. Select one of the points in the scene view by clicking on it, and then you can:</p>
+<ul>
+    <li>Move the selected points in the scene view</li>
+    <li>Input the exact positions for the selected points in the inspector</li>
+    <li>Delete the point or the entire pipe via a button in the inspector</li>
+    <li>Insert a new point via a button in the inspector</li>
+</ul>
+<p>Hold <kbd>Shift</kbd> to select multiple points. Press <kbd>A</kbd> to select every point of the selected pipe.</p>
+<p>Every pipe is a separate submesh, so you can assign separate materials by dragging them into the scene view.</p>
+
+</main></body></html>

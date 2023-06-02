@@ -1,0 +1,129 @@
+@font-face {
+    font-family: Inter;
+    src : url(../fonts/inter-variable.woff)
+}
+
+:root {
+    --background: #f0f0f0;
+    --secondary-background: #d6d6d6;
+    --text: #212121;
+    --grayed-text: #4d4d4d;
+    --link: #c15454;
+}
+
+::selection {
+    color: var(--background);
+    background-color: var(--text);
+}
+
+body {
+    background-color: var(--background);
+    font-family: Inter, 'helvetica', sans-serif;
+    margin: auto;
+    padding: 1rem;
+    max-width: 70ch;
+    grid-template-rows: auto 1fr auto;
+    display: grid;
+}
+
+main {
+    padding-bottom: 20px;
+    color: var(--text);
+}
+
+header {
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+    display: flex;
+    border-bottom: 1px solid black;
+}
+
+
+nav a {
+    margin: 0;
+    padding: 5px;
+    text-decoration: none;
+    transition: all .25s;
+    color: var(--text);
+}
+
+.homelink {
+    flex-grow: 1;
+}
+
+.emptyspace {
+    flex-grow: 1;
+    padding-top: 5px;
+}
+
+nav a:hover {
+    color: var(--background);
+    background-color: var(--text);
+}
+
+main a {
+    color: var(--text);
+}
+
+main a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]),)):after {
+    content: '↗';
+}
+
+main a:hover {
+    color: var(--link);
+}
+
+main img {
+    max-width: 100%;
+}
+
+main .date-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+main .date-list li time {
+    color: var(--grayed-text);
+    padding-right: 20px
+}
+
+main pre {
+    background-color: var(--secondary-background);
+    overflow: auto;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+main kbd, main span {
+    font-size: 85%;
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    border: 1px solid #848484;
+    font-family: inherit;
+    background-color: #e6e6e6;
+}
+
+main table tr {
+    text-align: left;
+    vertical-align:  center;
+}
+
+main table, td, th {
+    border: 1px solid #848484;
+    border-collapse: collapse;
+    padding: 3px 4px;
+}
+
+main .reel {
+    column-gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    max-width: 1280px;
+    padding-top: 15px;
+    padding-bottom: 8px;
+}
