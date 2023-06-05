@@ -1,4 +1,5 @@
 import os
+import re
 from page import Page
 from template import create
 import shutil
@@ -20,18 +21,26 @@ def main():
                 with open(file_path, 'r', encoding='utf-8') as f:
                     contents = f.read()
 
+                contents = replace_links(contents.split("\n",1)[1], map)
+                
                 from_file = ""
-
                 if map[file].from_title == "Home":
                     from_file = "../"
                 else:
-                    for page in map.values():
-                        if (page.title == map[file].from_title):
-                            from_file = f'{page.file_name}'
+                    from_file = filename_by_title(map[file].from_title, map)
                 
                 new_path = os.path.join(destination, file)
                 with open(new_path, 'w', encoding='utf-8') as f:
-                    f.write(create(map[file], contents.split("\n",1)[1], from_file))
+                    f.write(create(map[file], contents, from_file))
+
+def replace_links(content, map):
+    return re.sub(r'\[(.*?)\]', lambda match: f'href="/site/{filename_by_title(match.group(1), map)}"', content)
+
+def filename_by_title(title, map):
+    for page in map.values():
+        if (page.title == title):
+            return os.path.splitext(page.file_name)[0]
+    raise Exception(f"Can't find title {title}!")
 
 def fill_titles():
     map = {}

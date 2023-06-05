@@ -4,20 +4,20 @@
 }
 
 :root {
-    --background: #f0f0f0;
-    --secondary-background: #d6d6d6;
-    --text: #212121;
-    --grayed-text: #4d4d4d;
-    --link: #c15454;
+    --lighter: #f0f0f0;
+    --light: #e6e6e6;
+    --middle: #636363;
+    --dark: #212121;
+    --accent: #ab1515;
 }
 
 ::selection {
-    color: var(--background);
-    background-color: var(--text);
+    color: var(--lighter);
+    background-color: var(--dark);
 }
 
 body {
-    background-color: var(--background);
+    background-color: var(--lighter);
     font-family: Inter, 'helvetica', sans-serif;
     margin: auto;
     padding: 1rem;
@@ -28,7 +28,7 @@ body {
 
 main {
     padding-bottom: 20px;
-    color: var(--text);
+    color: var(--dark);
 }
 
 header {
@@ -38,7 +38,7 @@ header {
 nav {
     margin-top: 10px;
     display: flex;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--dark);
 }
 
 
@@ -47,7 +47,7 @@ nav a {
     padding: 5px;
     text-decoration: none;
     transition: all .25s;
-    color: var(--text);
+    color: var(--dark);
 }
 
 .homelink {
@@ -60,20 +60,20 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--background);
-    background-color: var(--text);
+    color: var(--lighter);
+    background-color: var(--dark);
 }
 
 main a {
-    color: var(--text);
+    color: var(--dark);
+}
+
+main a:hover {
+    color: var(--accent);
 }
 
 main a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]),)):after {
     content: '↗';
-}
-
-main a:hover {
-    color: var(--link);
 }
 
 main img {
@@ -86,12 +86,12 @@ main .date-list {
 }
 
 main .date-list li time {
-    color: var(--grayed-text);
+    color: var(--middle);
     padding-right: 20px
 }
 
 main pre {
-    background-color: var(--secondary-background);
+    background-color: var(--light);
     overflow: auto;
     padding: 10px;
     margin-bottom: 30px;
@@ -102,9 +102,9 @@ main kbd, main span {
     display: inline-block;
     padding: 2px 4px;
     border-radius: 3px;
-    border: 1px solid #848484;
+    border: 1px solid var(--middle);
     font-family: inherit;
-    background-color: #e6e6e6;
+    background-color: var(--light);
 }
 
 main table tr {
@@ -113,7 +113,7 @@ main table tr {
 }
 
 main table, td, th {
-    border: 1px solid #848484;
+    border: 1px solid var(--middle);
     border-collapse: collapse;
     padding: 3px 4px;
 }
