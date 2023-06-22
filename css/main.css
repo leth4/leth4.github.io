@@ -41,7 +41,6 @@ nav {
     border-bottom: 1px solid var(--dark);
 }
 
-
 nav a {
     margin: 0;
     padding: 5px;
@@ -74,6 +73,7 @@ main a:hover {
 
 main a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]),)):after {
     content: '↗';
+    font-family: arial;
 }
 
 main img {
