@@ -12,8 +12,7 @@
 }
 
 ::selection {
-    color: var(--lighter);
-    background-color: var(--dark);
+    background-color: #d6d2d2;
 }
 
 body {
@@ -126,4 +125,8 @@ main .reel {
     max-width: 1280px;
     padding-top: 15px;
     padding-bottom: 8px;
+}
+
+main .reel h2 {
+    margin-block-start: 0;
 }
