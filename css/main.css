@@ -68,6 +68,9 @@ main a {
 
 main a:hover {
     color: var(--accent);
+    position: relative; 
+    bottom: 1px;
+    left: 1px;
 }
 
 main a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]),)):after {
@@ -122,11 +125,10 @@ main .reel {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: auto;
-    max-width: 1280px;
     padding-top: 15px;
-    padding-bottom: 8px;
+    border-bottom: solid 1px var(--middle);
 }
 
-main .reel h2 {
+main .reel h3 {
     margin-block-start: 0;
 }
