@@ -20,9 +20,10 @@ body {
     font-family: Inter, sans-serif;
     margin: auto;
     padding: 1rem;
-    max-width: 70ch;
+    max-width: 80ch;
     grid-template-rows: auto 1fr auto;
     display: grid;
+    font-size: 18px;
 }
 
 main {
