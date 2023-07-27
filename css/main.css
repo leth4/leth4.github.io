@@ -83,13 +83,29 @@ main img {
     max-width: 100%;
 }
 
+main div:has(iframe) {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+main iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
 main .date-list {
     padding: 0;
     list-style-type: none;
 }
 
-main .date-list li time {
+main time {
     color: var(--middle);
+}
+
+main .date-list li time {
     padding-right: 20px
 }
 
@@ -115,7 +131,7 @@ main table tr {
     vertical-align:  center;
 }
 
-main table, td, th {
+main table, main td, main th {
     border: 1px solid var(--middle);
     border-collapse: collapse;
     padding: 3px 4px;
@@ -127,7 +143,7 @@ main .reel {
     grid-template-columns: 1fr 1fr;
     margin: auto;
     padding-top: 15px;
-    border-bottom: solid 1px var(--middle);
+    padding-bottom: 15px;
 }
 
 main .reel h3 {
