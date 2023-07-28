@@ -1,11 +1,20 @@
 import os
 import re
-from page import Page
 from template import create
 import shutil
 
 directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '\\pages'
 destination = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '\\site'
+
+class Page:
+    title = ''
+    from_title = ''
+    file_name = ''
+
+    def __init__(self, title, from_title, file_name):
+        self.title = title
+        self.from_title = from_title
+        self.file_name = file_name
 
 def main():
     if os.path.exists(destination):
@@ -54,18 +63,14 @@ def fill_titles():
                 if (file in map):
                     raise Exception(f"There's multiple files with the name {file}!")
                 map[file] = Page(title, parent, file)
-    return map;
+    return map
 
 def parse_meta(line, filename):
     if not line.startswith("[") or not line.endswith("]\n") or " from " not in line:
         raise Exception(f"Wrong meta format in {filename}")
-
-    line = line[1:-2]
-    words = line.split("] from [")
-
+    words = line[1:-2].split("] from [")
     if len(words) != 2:
         raise Exception(f"Wrong meta format in {filename}")
-
     return words[0], words[1]
 
 if __name__ == "__main__":
