@@ -83,7 +83,7 @@ main img {
     max-width: 100%;
 }
 
-main div:has(iframe) {
+main .youtube-embed {
     position: relative;
     width: 100%;
     padding-top: 56.25%;
