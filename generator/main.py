@@ -4,7 +4,7 @@ from template import create
 import shutil
 
 directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '\\pages'
-destination = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '\\site'
+destination = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 class Page:
     title = ''
@@ -17,10 +17,8 @@ class Page:
         self.file_name = file_name
 
 def main():
-    if os.path.exists(destination):
-        shutil.rmtree(destination)
-
-    os.makedirs(destination)
+    if not os.path.exists(destination):
+        os.makedirs(destination)
     map = fill_titles()
 
     for root, dirs, files in os.walk(directory):
@@ -43,7 +41,7 @@ def main():
                     f.write(create(map[file], contents, from_file))
 
 def replace_links(content, map):
-    return re.sub(r'\[(.*?)\]', lambda match: f'href="/site/{filename_by_title(match.group(1), map)}"', content)
+    return re.sub(r'\[(.*?)\]', lambda match: f'href="/{filename_by_title(match.group(1), map)}"', content)
 
 def filename_by_title(title, map):
     for page in map.values():
