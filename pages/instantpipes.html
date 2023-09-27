@@ -5,7 +5,7 @@
 <p><img src="https://github.com/letharqic/InstantPipes/assets/44412176/912f3879-1d82-4408-8cef-2698b82608a0"
         alt="A gif showing a bunch pipes appearing instantly following the cursor drag." /></p>
 <h2>Compatibility</h2>
-<p>Unity 2021.3 or higher.</p>
+<p>Unity 2019.4 or higher.</p>
 <h2>Installation</h2>
 <p>Add the package to your project via the <a href="https://docs.unity3d.com/Manual/upm-ui.html">Package Manager</a> using the Git URL
     <span>https://github.com/leth4/InstantPipes.git</span>. You can also clone the repository and point the Package Manager to your local copy.
@@ -17,18 +17,15 @@
     <li>Add a <span>Pipe Generator</span> component.</li>
     <li>Select a material for the <span>Material</span> property.</li>
 </ol>
+<p>If you're facing problems, visit the troubleshooting section.</p>
 <p>Ctrl+Z works with all actions. When you're commited to the pipes, you can just remove the component, the mesh will stay.</p>
 <h3>Pipes Settings</h3>
 <ul>
-    <li>
-        <span>Curvature</span> changes the length of the curved parts, making pipes appear more or less curvy. Note that it applies after pathfinding, so in some cases high
-        curvature value can make pipes intersect.
-    </li>
-    <li>
-        <span>Edges</span> property selects how many edges the pipes will have, and <span>Segments</span> is the amount of subdivisions in curved parts.
-    </li>
+    <li><span>Curvature</span> changes the length of the curved parts, making pipes appear more or less curvy. Note that it applies after pathfinding, so in some cases high
+        curvature value can make pipes intersect.</li>
+    <li><span>Edges</span> property selects how many edges the pipes will have, and <span>Segments</span> is the amount of subdivisions in curved parts. </li>
     <li>You can toggle <span>Rings</span> and <span>End Caps</span> and separately set up their radius and thickness.</li>
-    <li>Additionally, you can toggle <span>Extrusion</span> under the <span>Rings</span> label, replacing rings with extruded curved elements, like on plastic pipes.</li>
+    <li>Additionally, you can toggle <span>Extrusion</span> under the <span>Rings</span> label, replacing rings with extruded curved elements, like on plastic pipes. </li>
 </ul>
 <h3>Using pathfinding</h3>
 <p>In the component inspector, select the <span>Create</span> tab. Now in the scene view start dragging your cursor where you want the pipe to start, end let go where you want it
@@ -43,6 +40,10 @@
     </thead>
     <tbody>
         <tr>
+            <td>Preview Path</td>
+            <td>Will preview how the pipe will look like while dragging. Can be slow with complex pipes!</td>
+        </tr>
+        <tr>
             <td>Amount</td>
             <td>How many pipes will be created at once; each one will have an individual path.</td>
         </tr>
@@ -52,7 +53,7 @@
         </tr>
         <tr>
             <td>Grid Y Angle</td>
-            <td>Rotates the Y axis of the pathfinding grid that every pipes have to follow.</td>
+            <td>Rotates the Y axis of the pathfinding grid that every pipe has to follow.</td>
         </tr>
         <tr>
             <td>Grid Size</td>
@@ -88,3 +89,25 @@
 </ul>
 <p>Hold <kbd>Shift</kbd> to select multiple points. Press <kbd>A</kbd> to select every point of the selected pipe.</p>
 <p>Every pipe is a separate submesh, so you can assign separate materials by dragging them into the scene view.</p>
+<h2>Troubleshooting</h2>
+<h4> Getting an error when trying to build</h4>
+<ul>
+    <li>That was recently patched, so please update the package or download the latest version of the tool.</li>
+</ul>
+<h4>Pipes appear squashed</h4>
+<ul>
+    <li>Toggle and re-toggle rings, that should fix it. Will hopefully find a proper fix soon.</li>
+</ul>
+<h4>Dragging my cursor doesn't do anything</h4>
+<ul>
+    <li>Make sure you have the <span>Create</span> tab selected</li>
+    <li>Make sure you're pointing at a surface with a collider</li>
+    <li>Make sure Gizmos are enabled</li>
+    <li>If nothing else helped, try resetting the editor layout to default</li>
+</ul>
+<h4>Pipes can't find a way</h4>
+<ul>
+    <li>Set the <span>Iterations</span> higher, that will make the algorithm try for longer before giving up</li>
+    <li>Set the <span>Grid Size</span> higher, this way the algorithm can find a way with less iterations</li>
+    <li>Tone down the <span>Chaos</span>, <span>Straight Priority</span> and <span>Near Obstacle Priority</span> values, those make it harder to find a way</li>
+</ul>

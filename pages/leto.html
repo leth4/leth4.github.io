@@ -7,14 +7,21 @@
 <p>Visually inspired by <a href="https://github.com/hundredrabbits/Left">Left</a>, functionally by <a href="https://obsidian.md">Obsidian</a>. Made using <a
         href="https://github.com/tauri-apps/tauri">Tauri</a>.</p>
 <h2>Usage</h2>
-<p>Create a file directory to store your notes. Open the app, press <kbd>Ctrl + O</kbd> and select the directory. You can browse, open, create, delete and move files and folders
-    via the sidebar. Deleted files and folders are kept in a <kbd>.trash</kbd> folder in the working directory. All your changes are auto-saved.</p>
-<p>Markdown <span># headers</span>, <span>*italics*</span> and <span>`inline code`</span> are highlighted. There's also syntax highlighting for code blocks wrapped between
+<p>Create a file directory to store your notes. Open the app, press <kbd>Ctrl + O</kbd> and select the directory. You can browse, open, create, pin, preview, rename, delete and
+    move files and folders via the sidebar. Deleted files and folders are kept in a <span>.trash</span> folder in the working directory. All your changes are auto-saved.</p>
+<p>Markdown <span># headers</span>, <span>*italics*</span> and <span>`inline code`</span> are highlighted. You can also <span>&#91;&#91;link&#93;&#93;</span> to other files and
+    ctrl-click to open
+    them. There's syntax highlighting for code blocks wrapped between
     <span>```</span> symbols—you can specify the language in the first line, like <span>```csharp</span>. Languages that support highlighting are <i>C#</i>, <i>C++</i>,
     <i>C</i>, <i>JavaScript</i>, <i>Python</i>, <i>Go</i>, <i>Rust</i>, <i>Java</i> and <i>HLSL</i>.
 </p>
+<p>You can open a preview window for any file; task items in a preview window are clickable. Note that in leto tasks start with <span>&#91; &#93;</span>, not <span>- &#91;
+        &#93;</span>. Press
+    <kbd>Ctrl + O</kbd> to open a file corresponding to the selected preview. Press <kbd>Ctrl + P</kbd> or right-click the title bar of the preview window to make it always stay on
+    top.
+</p>
 <p>The default font is <a href="https://fonts.google.com/specimen/Inter">Inter</a>, but you can input any font via the Preferences menu (opened with <kbd>Ctrl+P</kbd>). Note that
-    you need the font installed locally.</p>
+    you need the font installed locally. Real italics and bold are only displayed for monospace fonts; otherwise those are just colored.</p>
 <h2>Shortcuts</h2>
 <table>
     <thead>
@@ -45,12 +52,20 @@
             <td>Show/hide preferences</td>
         </tr>
         <tr>
+            <td><kbd>Ctrl + F</kbd></td>
+            <td>Show/hide the search box</td>
+        </tr>
+        <tr>
             <td><kbd>Ctrl + B</kbd></td>
             <td>Fold/unfold the sidebar</td>
         </tr>
         <tr>
             <td><kbd>Ctrl + R</kbd></td>
             <td>Toggle spellcheck</td>
+        </tr>
+        <tr>
+            <td><kbd>Ctrl + D</kbd></td>
+            <td>Open preview of the active file</td>
         </tr>
         <tr>
             <td><kbd>Ctrl + T</kbd></td>
@@ -73,8 +88,8 @@
             <td>Create a new folder</td>
         </tr>
         <tr>
-            <td><kbd>Ctrl + F</kbd></td>
-            <td>Toggle fullscreen</td>
+            <td><kbd>Ctrl + Number</kbd></td>
+            <td>Open pinned file</td>
         </tr>
         <tr>
             <td><kbd>Ctrl + Tab</kbd></td>
@@ -86,11 +101,11 @@
         </tr>
         <tr>
             <td><kbd>Alt + ↑ / ↓</kbd></td>
-            <td>Move the current line</td>
+            <td>Move selected lines</td>
         </tr>
         <tr>
             <td><kbd>Alt + Shift + ↑ / ↓</kbd></td>
-            <td>Duplicate the current line</td>
+            <td>Duplicate selected lines</td>
         </tr>
         <tr>
             <td><kbd>Ctrl + Enter</kbd></td>
