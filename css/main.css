@@ -69,9 +69,7 @@ main a {
 
 main a:hover {
     color: var(--accent);
-    position: relative; 
-    bottom: 1px;
-    left: 1px;
+    position: relative;
 }
 
 main a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]),)):after {
