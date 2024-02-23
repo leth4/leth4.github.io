@@ -10,19 +10,28 @@
 <h2>Usage</h2>
 <p>Create a file directory to store your notes. Open the app, press <kbd>Ctrl + O</kbd> and select the directory. You can browse, open, create, pin, preview, rename, delete and
     move files and folders via the sidebar. Deleted files and folders are kept in a <span>.trash</span> folder in the working directory. All your changes are auto-saved.</p>
-<p>Markdown <span># headers</span>, <span>*italics*</span> and <span>`inline code`</span> are highlighted. You can also <span>&#91;&#91;link&#93;&#93;</span> to other files and
-    ctrl-click to open
-    them. There's syntax highlighting for code blocks wrapped between
-    <span>```</span> symbols—you can specify the language in the first line, like <span>```csharp</span>. Languages that support highlighting are <i>C#</i>, <i>C++</i>,
-    <i>C</i>, <i>JavaScript</i>, <i>Python</i>, <i>Go</i>, <i>Rust</i>, <i>Java</i> and <i>HLSL</i>.
+<p>Markdown <span># headers</span>, <span>*italics*</span>, <span>**bold**</span> and <span>`inline code` </span> are highlighted. You can also
+    <span>&#91;&#91;link&#93;&#93;</span> to other files
+    and ctrl-click to open them. There's also syntax highlighting for code blocks wrapped between <span>``` </span> symbols—you can specify the language in the first line, like
+    <span>```csharp</span>. Languages that support highlighting are <i>C#</i>, <i>C++</i>, <i>C</i>, <i>JavaScript</i>, <i>Python</i>, <i>Rust</i>, <i>Go</i>,
+    <i>Java</i> and <i>HLSL</i>.
 </p>
 <p>You can open a preview window for any file; task items in a preview window are clickable. Note that in leto tasks start with <span>&#91; &#93;</span>, not <span>- &#91;
         &#93;</span>. Press
-    <kbd>Ctrl + O</kbd> to open a file corresponding to the selected preview. Press <kbd>Ctrl + P</kbd> or right-click the title bar of the preview window to make it always stay on
-    top.
+    <kbd>Ctrl + O</kbd> to open a file corresponding to the selected preview. Press <kbd>Ctrl + P</kbd> or right-click the title bar of the preview window to make it always
+    stay on top. Right-click on any link to open a preview window for it.
 </p>
-<p>The default font is <a href="https://fonts.google.com/specimen/Inter">Inter</a>, but you can input any font via the Preferences menu (opened with <kbd>Ctrl+P</kbd>). Note that
-    you need the font installed locally. Real italics and bold are only displayed for monospace fonts; otherwise those are just colored.</p>
+<p>You can open <span>.png</span>, <span>.jpg</span> and <span>.gif</span> images and <span>&#91;&#91;link&#93;&#93;</span> them just like regular files. Hover on a link while
+    holding
+    <kbd>Ctrl</kbd> to preview the image; you can also open a separate preview window for it, where you can zoom and move it. Paste an image directly into the text, and leto will
+    make a file for it and link it automatically.
+</p>
+<p>There's a canvas mode with cards, called Lea. Right-click the sidebar and select <span>New Lea</span> to make a <span>.lea</span> file. Use context menu to create, copy,
+    delete and cut cards, as well as send them to back or front, invert their colors and connect them via arrows. Right-click an arrow to remove or reverse it. Scroll to zoom in or
+    out. Use left mouse button to drag cards and the canvas, and right mouse button to select cards. If multiple cards are selected, you can align them via the context menu. Drag a
+    card by its sides to resize it. You can drag notes and images from the sidebar directly onto the canvas.</p>
+<p>The default font is <a href="https://github.com/rsms/inter">Inter</a>, but you can input any font via the Preferences menu (opened with <kbd>Ctrl+P</kbd>). Note that you need
+    the font installed locally. Real italics and bold are only displayed for monospace fonts; otherwise those are just colored.</p>
 <h2>Shortcuts</h2>
 <table>
     <thead>
@@ -37,16 +46,28 @@
             <td>Open a new directory</td>
         </tr>
         <tr>
-            <td><kbd>Ctrl + Shift + S</kbd></td>
-            <td>Save active file as new (leto will stay in current directory)</td>
+            <td><kbd>Ctrl + Q</kbd></td>
+            <td>Close active window</td>
         </tr>
         <tr>
-            <td><kbd>Ctrl + Q</kbd></td>
-            <td>Exit leto</td>
+            <td><kbd>Ctrl + Shift + Q</kbd></td>
+            <td>Close all windows</td>
+        </tr>
+        <tr>
+            <td><kbd>Ctrl + Shift + S</kbd></td>
+            <td>Save active file as new</td>
+        </tr>
+        <tr>
+            <td><kbd>Ctrl + Shift + F</kbd></td>
+            <td>Toggle fullscreen</td>
         </tr>
         <tr>
             <td><kbd>Ctrl + M</kbd></td>
             <td>Minimize leto</td>
+        </tr>
+        <tr>
+            <td><kbd>Ctrl + E</kbd></td>
+            <td>Show quick open</td>
         </tr>
         <tr>
             <td><kbd>Ctrl + P</kbd></td>
@@ -75,6 +96,10 @@
         <tr>
             <td><kbd>Ctrl + Plus / Minus</kbd></td>
             <td>Change font size</td>
+        </tr>
+        <tr>
+            <td><kbd>Ctrl + Shift + Plus / Minus</kbd></td>
+            <td>Change sidebar size</td>
         </tr>
         <tr>
             <td><kbd>Ctrl + ] / [</kbd></td>
@@ -110,7 +135,7 @@
         </tr>
         <tr>
             <td><kbd>Ctrl + Enter</kbd></td>
-            <td>Create or check/uncheck a to-do task</td>
+            <td>Create or check/uncheck a task</td>
         </tr>
         <tr>
             <td><kbd>Ctrl + L</kbd></td>
@@ -119,6 +144,57 @@
         <tr>
             <td><kbd>Ctrl + X</kbd></td>
             <td>Cut the current line</td>
+        </tr>
+    </tbody>
+</table>
+<h2>Lea Shortcuts</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Shortcut</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><kbd>Space</kbd></td>
+            <td>Create a new card</td>
+        </tr>
+        <tr>
+            <td><kbd>] / [</kbd></td>
+            <td>Send to front/back</td>
+        </tr>
+        <tr>
+            <td><kbd>I</kbd></td>
+            <td>Invert the card&#39;s color</td>
+        </tr>
+        <tr>
+            <td><kbd>V</kbd></td>
+            <td>Align selected cards vertically</td>
+        </tr>
+        <tr>
+            <td><kbd>H</kbd></td>
+            <td>Align selected cards horizontally</td>
+        </tr>
+        <tr>
+            <td><kbd>C</kbd></td>
+            <td>Connect selected cards</td>
+        </tr>
+        <tr>
+            <td><kbd>D</kbd></td>
+            <td>Disconnect selected cards</td>
+        </tr>
+        <tr>
+            <td><kbd>Plus / Minus</kbd></td>
+            <td>Zoom in/out</td>
+        </tr>
+        <tr>
+            <td><kbd>Ctrl + R</kbd></td>
+            <td>Reset canvas position</td>
+        </tr>
+        <tr>
+            <td><kbd>Ctrl + Shift + V</kbd></td>
+            <td>Paste an image</td>
         </tr>
     </tbody>
 </table>
