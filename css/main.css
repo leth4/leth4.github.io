@@ -135,6 +135,16 @@ main table, main td, main th {
     padding: 3px 4px;
 }
 
+main .gallery {
+    columns: 15rem 2;
+    gap: .5rem;
+}
+
+main .gallery img {
+    width: 100%;
+    margin-bottom: .3rem;
+}
+
 main .reel {
     column-gap: 20px;
     display: grid;
