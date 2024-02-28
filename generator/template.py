@@ -7,8 +7,7 @@ def head(page):
 def header(from_link): 
     return (f'<header><nav><a href="{from_link}" class="homelink">←</a>'
             '<a href="/games">Games</a><a href="/projects">Projects</a>'
-            '<a href="/blog">Blog</a><a href="/about">About</a>'
-            '</nav></header>')
+            '<a href="/about">About</a></nav></header>')
 
 def create(page, contents, from_link):
     return f'{head(page)}<body>{header(from_link)}<main>\n\n<h1>{page.title}</h1>{contents}\n\n</main></body></html>'
