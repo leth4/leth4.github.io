@@ -37,7 +37,7 @@ def main():
                 if map[file].from_title == "Home":
                     from_file = "../"
                 else:
-                    from_file = filename_by_title(map[file].from_title, map)
+                    from_file = "../" + filename_by_title(map[file].from_title, map)
 
                 if ("\\notes\\" in file_path):
                     new_path = os.path.join(destination + "\\notes\\", file)
