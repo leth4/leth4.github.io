@@ -177,7 +177,7 @@ main .note {
     background-color: var(--card);
     border: 1px solid var(--border);
     border-radius: 3px;
-    margin-top: 15px;
+    margin-top: 10px;
     transition: all 0.25s ease-in-out;
 }
 
