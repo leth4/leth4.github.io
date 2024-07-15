@@ -6,6 +6,7 @@
 :root {
     --lighter: #f0f0f0;
     --light: #e6e6e6;
+    --border: #a7a7a7;
     --middle: #636363;
     --dark: #212121;
     --accent: #870d0d;
@@ -154,16 +155,26 @@ main .reel {
 
 @media (max-width: 600px) {
     main .reel {grid-template-columns: 1fr;}
-}
-
-main .reel h3 {
-    margin-block-start: 0;
+    main .reel img {padding-top: 1rem}
 }
 
 main .note {
     padding: 20px;
     background-color: var(--light);
-    border: 1px solid var(--middle);
+    border: 1px solid var(--border);
     border-radius: 3px;
     margin-top: 15px;
+    transition: all 0.25s ease-in-out;
+}
+
+main .note:hover {
+    box-shadow: 0 0 15px var(--border);
+}
+
+main .note *:first-child { 
+    margin-top: 0;
+}
+
+main .note *:last-child { 
+    margin-bottom: 0;
 }
