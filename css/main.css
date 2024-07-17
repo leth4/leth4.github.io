@@ -11,6 +11,7 @@
     --text: #212121;
     --accent: #870d0d;
     --selection: #d6d2d2;
+    --hover-shadow: 0 0 20px #a7a7a7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,8 +23,8 @@
         --text: #c2bebe;
         --accent: #d56a6a;
         --selection: #424141;
+        --hover-shadow: 0 0 50px #e3d1bb20;
     }
-    main .note:hover { box-shadow: 0 0 50px #e3d1bb20 !important; }
 }
 
 ::selection {
@@ -158,6 +159,11 @@ main .gallery {
 main .gallery img {
     width: 100%;
     margin-bottom: .3rem;
+    transition: all 0.25s ease-in-out;
+}
+
+main .gallery img:hover {
+    box-shadow: var(--hover-shadow);
 }
 
 main .reel {
@@ -182,7 +188,7 @@ main .note {
 }
 
 main .note:hover {
-    box-shadow: 0 0 20px var(--border);
+    box-shadow: var(--hover-shadow);
 }
 
 main .note *:first-child { 
