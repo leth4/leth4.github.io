@@ -79,6 +79,11 @@ nav a:hover {
     background-color: var(--text);
 }
 
+main mark, main mark a {
+    background-color: transparent;
+    color: var(--accent)
+}
+
 main a {
     color: var(--text);
 }
