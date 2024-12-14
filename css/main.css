@@ -95,7 +95,6 @@ main a:hover {
 
 main a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]),)):after {
     content: '↗';
-    font-family: arial;
 }
 
 main img {
