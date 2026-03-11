@@ -71,7 +71,6 @@ nav a {
 
 .emptyspace {
     flex-grow: 1;
-    padding-top: 5px;
 }
 
 nav a:hover {
