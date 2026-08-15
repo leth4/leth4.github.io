@@ -11,12 +11,14 @@ class Page:
     from_title = ''
     file_name = ''
     is_note = False
+    is_photo = False
 
-    def __init__(self, title, from_title, file_name, is_note):
+    def __init__(self, title, from_title, file_name, is_note, is_photo):
         self.title = title
         self.from_title = from_title
         self.file_name = file_name
         self.is_note = is_note
+        self.is_photo = is_photo
 
 def main():
     if not os.path.exists(destination):
@@ -41,6 +43,8 @@ def main():
 
                 if ("\\notes\\" in file_path):
                     new_path = os.path.join(destination + "\\notes\\", file)
+                elif ("\\photos\\" in file_path):
+                    new_path = os.path.join(destination + "\\photos\\", file)
                 else:
                     new_path = os.path.join(destination, file)
 
@@ -59,6 +63,8 @@ def filename_by_title(title, map):
         if (page.title == title):
             if (page.is_note):
                 return "notes/" + os.path.splitext(page.file_name)[0]
+            elif (page.is_photo):
+                return "photos/" + os.path.splitext(page.file_name)[0]
             else:
                 return os.path.splitext(page.file_name)[0]
     raise Exception(f"Can't find title {title}!")
@@ -74,7 +80,7 @@ def fill_titles():
                 title, parent = parse_meta(meta_line, file)
                 if (file in map):
                     raise Exception(f"There's multiple files with the name {file}!")
-                map[file] = Page(title, parent, file, "\\notes\\" in file_path)
+                map[file] = Page(title, parent, file, "\\notes\\" in file_path, "\\photos\\" in file_path)
     return map
 
 def parse_meta(line, filename):
